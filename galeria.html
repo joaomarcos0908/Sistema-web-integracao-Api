@@ -3,9 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galeria- Carlos Ventura</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">Carlos <span>Ventura</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="galeria.html"class="active">Galeria</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="adquirir.html" class="nav-cta">Adquirir Obra</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- HEADER DA PÁGINA -->
+<header class="page-header" data-title="GALERIA">
+  <p class="section-label">Portfólio Completo</p>
+  <h1>Galeria de Obras</h1>
+  <p>Explore o universo visual de Carlos Ventura. Filtre por técnica, coleção ou faixa de preço.</p>
+</header>
+
+<!-- GALERIA -->
+<section>
+  <div class="container">
+
+    <!-- Cotação ao vivo -->
+    <div id="currency-bar" class="currency-bar fade-in">
+      <span>Carregando cotações...</span>
+    </div>
+
+    <!-- Filtros por técnica -->
+    <div class="filtros-wrap fade-in">
+      <button class="filtro-btn active" data-filtro-tecnica="todos">Todas</button>
+      <button class="filtro-btn" data-filtro-tecnica="Óleo">Óleo</button>
+      <button class="filtro-btn" data-filtro-tecnica="Acrílico">Acrílico</button>
+      <button class="filtro-btn" data-filtro-tecnica="Aquarela">Aquarela</button>
+    </div>
+
+    <!-- Filtros adicionais -->
+    <div class="filtros-row fade-in">
+      <div class="filtro-group">
+        <label for="sel-colecao">Coleção</label>
+        <select id="sel-colecao">
+          <option value="todos">Todas as coleções</option>
+          <option value="Sertão e Silêncio">Sertão e Silêncio</option>
+          <option value="Paisagens Urbanas">Paisagens Urbanas</option>
+        </select>
+      </div>
+      <div class="filtro-group">
+        <label for="sel-preco">Faixa de Preço</label>
+        <select id="sel-preco">
+          <option value="todos">Qualquer preço</option>
+          <option value="0-2000">Até R$ 2.000</option>
+          <option value="2000-5000">R$ 2.000 – R$ 5.000</option>
+          <option value="5000-999999">Acima de R$ 5.000</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Grid de obras -->
+    <div class="obras-grid" id="obras-grid">
+      <!-- Preenchido pelo JS -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Carlos <span>Ventura</span></div>
+        <p>Arte plástica brasileira com alma nordestina. Obras únicas à sua espera.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <a href="index.html">Início</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="adquirir.html">Adquirir</a>
+      </div>
+      <div class="footer-col">
+        <h5>Coleções</h5>
+        <a href="galeria.html">Sertão e Silêncio</a>
+        <a href="galeria.html">Paisagens Urbanas</a>
+        <a href="galeria.html">Obras Vendidas</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <a href="mailto:contato@carlosventura.art">contato@carlosventura.art</a>
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Carlos Ventura. Todos os direitos reservados.</span>
+      <span>Arte com alma nordestina 🎨</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="main.js"></script>
+
 </body>
 </html>
