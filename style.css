@@ -58,3 +58,37 @@ h1,h2,h3{
   margin-bottom: 3rem;
   position: relative;
 }
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .obras-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .colecoes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px){
+   .obras-grid {
+      grid-template-columns: repeat(3, 1fr);
+   }
+   .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+   .colecoes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+ 
+}
