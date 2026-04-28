@@ -252,12 +252,113 @@ ul { list-style: none; }
       border-color: rgb(184, 207, 13);
    }
 
+
+   .timeline { position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 1.5rem; top: 0; bottom: 0;
+  width: 1px; background: rgba(184,150,62,0.3);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.timeline-dot {
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: 0.4rem;
+  margin-left: 0.9375rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.timeline-year {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+.timeline-titulo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin: 0.2rem 0 0.5rem;
+}
+.timeline-desc { font-size: 0.9rem; color: var(--ink-lt); }
  .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   padding: 0;
 }
+.form-side {
+  padding: 7rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.form-obra-side {
+  background: var(--bg-dark);
+  padding: 7rem 4rem;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+}
+.form-obra-img {
+  width: 260px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+.form-obra-nome { font-family: var(--serif); font-size: 1.5rem; color: var(--white); }
+.form-obra-detalhes { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+.form-obra-preco { font-family: var(--serif); font-size: 2rem; color: var(--gold-lt); margin-top: 1rem; }
+
+.form-group { margin-bottom: 1.8rem; }
+.form-group label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  padding: 0.9rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(26,22,18,0.2);
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color var(--trans);
+}
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--gold);
+}
+.form-group input.error { border-color: var(--sold); }
+.form-group .err-msg {
+  font-size: 0.72rem;
+  color: var(--sold);
+  margin-top: 0.3rem;
+  display: none;
+}
+.form-group.has-error .err-msg { display: block; }
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem;
+  border: 1px solid rgba(184,150,62,0.3);
+}
+.form-success.visible { display: block; }
+.form-success h3 { font-family: var(--serif); font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
+
 
 .obras-grid {
   display: grid;
