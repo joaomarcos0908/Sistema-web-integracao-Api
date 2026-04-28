@@ -17,3 +17,44 @@ h1,h2,h3{
  h3{
     font-size:20px;
  }
+
+ .hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0;
+}
+
+.obras-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.colecoes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 80vh;
+  padding: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
