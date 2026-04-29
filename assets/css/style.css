@@ -56,6 +56,7 @@ h1,h2,h3{
  .status{
   background-color: var(--gold);
   color: var(--cream);
+  padding: 5rem 4rem"
  }
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
