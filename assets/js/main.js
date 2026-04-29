@@ -232,6 +232,66 @@ function initHeroObras() {
   `).join('');
    scrollInterativo();
 }
+function initFormAdquirir() {
+  const form = document.getElementById('form-adquirir');
+  if (!form) return;
+ 
+  const params = new URLSearchParams(window.location.search);
+  const idObra = parseInt(params.get('id'));
+  const obra   = obras.find(o => o.id === idObra);
+ 
+  if (obra) {
+    const el = document.getElementById('form-obra-info');
+    if (el) {
+      el.innerHTML = `
+        <img src="${obra.img}" alt="${obra.nome}" class="form-obra-img">
+        <div class="obra-tecnica">${obra.tecnica} · ${obra.dimensoes}</div>
+        <div class="form-obra-nome">${obra.nome}</div>
+        <div class="form-obra-detalhes">${obra.ano} · ${obra.colecao}</div>
+        <div class="form-obra-preco">R$ ${obra.preco.toLocaleString('pt-BR')}</div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem" data-preco-brl="${obra.preco}"></div>
+      `;
+    }
+    const hiddenObra = document.getElementById('hidden-obra');
+    if (hiddenObra) hiddenObra.value = obra.nome;
+  }
+ 
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+ 
+    const nome     = document.getElementById('campo-nome').value.trim();
+    const email    = document.getElementById('campo-email').value.trim();
+    const telefone = document.getElementById('campo-telefone').value.trim();
+ 
+    if (!nome || !email || !telefone) {
+      alert("Carlos Ventura precisa do seu nome, e-mail e telefone para retornar o contato!");
+      return;
+    }
+ 
+    const dadosParaSalvar = { nome, email, telefone };
+ 
+    fetch('http://localhost:3000/contato', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dadosParaSalvar)
+    })
+    .then(resposta => {
+      if (resposta.ok) {
+        form.style.display = 'none';
+        const divSucesso = document.getElementById('form-success');
+        if (divSucesso) divSucesso.style.display = 'block';
+        form.reset();
+      } else {
+        alert("Erro ao salvar no servidor. Tente novamente.");
+      }
+    })
+    .catch(erro => {
+      console.error("Erro na conexão com o servidor:", erro);
+      alert("O servidor está desligado! Ligue o Node.js no terminal.");
+    });
+  });
+}
+ 
 
 document.addEventListener('DOMContentLoaded' , async  () => {
 
@@ -308,4 +368,5 @@ scrollInterativo();
 initHeroObras();
 renderObras(obras);
 initFiltros();
+initFormAdquirir();
 })
