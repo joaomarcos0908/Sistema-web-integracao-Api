@@ -1,162 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Ventura - O artista </title>
-    <meta name="description" content="Galeria online de Carlos Ventura, artista plástico com obras em óleo, acrílico e aquarela. Conheça e adquira.">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carlos Ventura - O artista</title>
+    <meta
+      name="description"
+      content="Galeria online de Carlos Ventura, artista plástico com obras em óleo, acrílico e aquarela. Conheça e adquira."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <!-- NAVBAR -->
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">Carlos <span>Ventura</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Início</a></li>
-    <li><a href="galeria.html">Galeria</a></li>
-    <li><a href="sobre.html">Sobre</a></li>
-    <li><a href="adquirir.html" class="nav-cta">Adquirir Obra</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">Carlos <span>Ventura</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="adquirir.html" class="nav-cta">Adquirir Obra</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-subtitle">Arte Plástica · Nordeste Brasileiro</p>
+        <h1>Onde a tela<br /><em>respira</em></h1>
+        <p class="hero-desc">
+          Mais de 20 anos pintando o sertão, as cidades e a alma do Brasil.
+          Criações exclusivas em óleo, acrílico e aquarela: para colecionar, se
+          emocionar e levar para sempre.
+        </p>
+        <div class="hero-actions">
+          <a href="galeria.html" class="btn btn-primary">Ver Galeria</a>
+          <a href="sobre.html" class="btn btn-outline">Conheça o Artista</a>
+        </div>
+        <div class="hero-scroll">Explorar</div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=900&q=85"
+          alt="Obra de Carlos Ventura"
+        />
+        <div class="hero-image-overlay"></div>
+      </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <p class="hero-subtitle">Arte Plástica · Nordeste Brasileiro</p>
-    <h1>Onde a tela<br><em>respira</em></h1>
-    <p class="hero-desc">
-      Mais de 20 anos pintando o sertão, as cidades e a alma do Brasil. Criações exclusivas em óleo, acrílico e aquarela: para colecionar, se emocionar e levar para sempre.
-    </p>
-    <div class="hero-actions">
-      <a href="galeria.html" class="btn btn-primary">Ver Galeria</a>
-      <a href="sobre.html" class="btn btn-outline">Conheça o Artista</a>
-    </div>
-    <div class="hero-scroll">Explorar</div>
-  </div>
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=900&q=85" alt="Obra de Carlos Ventura">
-    <div class="hero-image-overlay"></div>
-  </div>
-</section>
+    <!-- DESTAQUES -->
+    <section style="padding: 6rem 4rem">
+      <div class="container">
+        <p class="section-label fade-in">Obras em Destaque</p>
+        <h2 class="section-title fade-in">Disponíveis para<br />aquisição</h2>
+        <div class="section-divider fade-in"></div>
 
+        <!-- Cotação de moedas -->
+        <div id="currency-bar" class="currency-bar fade-in">
+          <span>Carregando cotações...</span>
+        </div>
 
-<!-- DESTAQUES -->
-<section style="padding: 6rem 4rem;">
-  <div class="container">
-    <p class="section-label fade-in">Obras em Destaque</p>
-    <h2 class="section-title fade-in">Disponíveis para<br>aquisição</h2>
-    <div class="section-divider fade-in"></div>
+        <div class="obras-grid" id="destaque-grid">
+          <!-- Preenchido pelo JS -->
+        </div>
 
-    <!-- Cotação de moedas -->
-    <div id="currency-bar" class="currency-bar fade-in">
-      <span>Carregando cotações...</span>
-    </div>
-
-    <div class="obras-grid" id="destaque-grid">
-      <!-- Preenchido pelo JS -->
-    </div>
-
-    <div style="text-align:center; margin-top: 3rem;" class="fade-in">
-      <a href="galeria.html" class="btn btn-outline">Ver Todas as Obras</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- COLEÇÕES -->
-<section style="background: var(--cream); padding: 6rem 4rem;">
-  <div class="container">
-    <p class="section-label fade-in">Universos Temáticos</p>
-    <h2 class="section-title fade-in">Coleções</h2>
-    <div class="section-divider fade-in"></div>
-    <div class="colecoes-grid">
-      <div class="colecao-card fade-in">
-        <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=80" alt="Sertão e Silêncio">
-        <div class="colecao-overlay">
-          <span class="colecao-label">Coleção</span>
-          <h3 class="colecao-nome">Sertão e Silêncio</h3>
-          <p class="colecao-count">3 obras · Óleo &amp; Aquarela</p>
+        <div style="text-align: center; margin-top: 3rem" class="fade-in">
+          <a href="galeria.html" class="btn btn-outline">Ver Todas as Obras</a>
         </div>
       </div>
-      <div class="colecao-card fade-in stagger-1">
-        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80" alt="Paisagens Urbanas">
-        <div class="colecao-overlay">
-          <span class="colecao-label">Coleção</span>
-          <h3 class="colecao-nome">Paisagens Urbanas</h3>
-          <p class="colecao-count">3 obras · Óleo &amp; Aquarela</p>
+    </section>
+
+    <!-- COLEÇÕES -->
+    <section style="background: var(--cream); padding: 6rem 4rem">
+      <div class="container">
+        <p class="section-label fade-in">Universos Temáticos</p>
+        <h2 class="section-title fade-in">Coleções</h2>
+        <div class="section-divider fade-in"></div>
+        <div class="colecoes-grid">
+          <div class="colecao-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=80"
+              alt="Sertão e Silêncio"
+            />
+            <div class="colecao-overlay">
+              <span class="colecao-label">Coleção</span>
+              <h3 class="colecao-nome">Sertão e Silêncio</h3>
+              <p class="colecao-count">3 obras · Óleo &amp; Aquarela</p>
+            </div>
+          </div>
+          <div class="colecao-card fade-in stagger-1">
+            <img
+              src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80"
+              alt="Paisagens Urbanas"
+            />
+            <div class="colecao-overlay">
+              <span class="colecao-label">Coleção</span>
+              <h3 class="colecao-nome">Paisagens Urbanas</h3>
+              <p class="colecao-count">3 obras · Óleo &amp; Aquarela</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- CHAMADA INSTITUCIONAL -->
+    <section style="padding: 7rem 4rem">
+      <div
+        class="container"
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 5rem;
+          align-items: center;
+        "
+      >
+        <div class="fade-in">
+          <img
+            src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=700&q=80"
+            alt="Carlos Ventura"
+            style="aspect-ratio: 4/5; object-fit: cover; width: 100%"
+          />
+        </div>
+        <div>
+          <p class="section-label fade-in">O Artista</p>
+          <h2 class="fade-in">Carlos <em>Ventura</em></h2>
+          <div class="section-divider fade-in"></div>
+          <p class="fade-in" style="margin-bottom: 1.5rem">
+            Nascido no Nordeste, Carlos Ventura tem na paisagem e na memória
+            coletiva brasileira a matéria-prima de sua arte. Com mais de 20 anos
+            de trajetória, suas obras já foram expostas em galerias nacionais e
+            internacionais.
+          </p>
+          <p class="fade-in stagger-1" style="margin-bottom: 2.5rem">
+            Cada tela é uma conversa entre técnica e emoção — camadas de tinta
+            que escondem e revelam ao mesmo tempo.
+          </p>
+          <a href="sobre.html" class="btn btn-outline fade-in stagger-2"
+            >Ver Trajetória</a
+          >
+        </div>
+      </div>
+    </section>
 
-<!-- CHAMADA INSTITUCIONAL -->
-<section style="padding: 7rem 4rem;">
-  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
-    <div class="fade-in">
-      <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=700&q=80"
-           alt="Carlos Ventura"
-           style="aspect-ratio:4/5;object-fit:cover;width:100%;">
-    </div>
-    <div>
-      <p class="section-label fade-in">O Artista</p>
-      <h2 class="fade-in">Carlos <em>Ventura</em></h2>
-      <div class="section-divider fade-in"></div>
-      <p class="fade-in" style="margin-bottom:1.5rem">
-        Nascido no Nordeste, Carlos Ventura tem na paisagem e na memória coletiva brasileira a matéria-prima de sua arte. Com mais de 20 anos de trajetória, suas obras já foram expostas em galerias nacionais e internacionais.
-      </p>
-      <p class="fade-in stagger-1" style="margin-bottom:2.5rem">
-        Cada tela é uma conversa entre técnica e emoção — camadas de tinta que escondem e revelam ao mesmo tempo.
-      </p>
-      <a href="sobre.html" class="btn btn-outline fade-in stagger-2">Ver Trajetória</a>
-    </div>
-  </div>
-</section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="nav-logo">Carlos <span>Ventura</span></div>
+            <p>
+              Arte plástica brasileira com alma nordestina. Obras únicas à sua
+              espera.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Navegação</h5>
+            <a href="index.html">Início</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="adquirir.html">Adquirir</a>
+          </div>
+          <div class="footer-col">
+            <h5>Coleções</h5>
+            <a href="galeria.html">Sertão e Silêncio</a>
+            <a href="galeria.html">Paisagens Urbanas</a>
+            <a href="galeria.html">Obras Vendidas</a>
+          </div>
+          <div class="footer-col">
+            <h5>Contato</h5>
+            <a href="mailto:contato@carlosventura.art"
+              >contato@carlosventura.art</a
+            >
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2024 Carlos Ventura. Todos os direitos reservados.</span>
+          <span>Arte com alma nordestina 🎨</span>
+        </div>
+      </div>
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo">Carlos <span>Ventura</span></div>
-        <p>Arte plástica brasileira com alma nordestina. Obras únicas à sua espera.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Navegação</h5>
-        <a href="index.html">Início</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="adquirir.html">Adquirir</a>
-      </div>
-      <div class="footer-col">
-        <h5>Coleções</h5>
-        <a href="galeria.html">Sertão e Silêncio</a>
-        <a href="galeria.html">Paisagens Urbanas</a>
-        <a href="galeria.html">Obras Vendidas</a>
-      </div>
-      <div class="footer-col">
-        <h5>Contato</h5>
-        <a href="mailto:contato@carlosventura.art">contato@carlosventura.art</a>
-        <a href="#">Instagram</a>
-        <a href="#">WhatsApp</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2024 Carlos Ventura. Todos os direitos reservados.</span>
-      <span>Arte com alma nordestina 🎨</span>
-    </div>
-  </div>
-</footer>
-
-<div class="toast" id="toast"></div>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/api.js"></script>
-    
-</body>
+    <div class="toast" id="toast"></div>
+    <script src="main.js"></script>
+    <script src="api.js"></script>
+  </body>
 </html>
