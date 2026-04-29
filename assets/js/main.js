@@ -110,9 +110,17 @@ function initMobileMenu() {
 
 function scrollInterativo() {
   const els = document.querySelectorAll('.fade-in');
-  const obs  = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
   els.forEach(el => obs.observe(el));
 }
 function renderObras(lista) {
@@ -364,9 +372,11 @@ if(formAdquirir) {
 }
 initNavbar();
 initMobileMenu();
-scrollInterativo();
-initHeroObras();
+initHeroObras(); 
+
 renderObras(obras);
+
+scrollInterativo()
 initFiltros();
 initFormAdquirir();
 })
