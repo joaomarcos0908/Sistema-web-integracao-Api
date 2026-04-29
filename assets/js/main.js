@@ -141,7 +141,7 @@ function renderObras(lista) {
         ${!o.disponivel ? '<span class="badge-vendido">Vendido</span>' : ''}
         <div class="obra-overlay">
           ${o.disponivel
-            ? `<a href="adquirir.html?id=${o.id}" class="btn btn-outline-gold">Adquirir Obra</a>`
+            ? `<a href="adquirir.html?id=${o.id}" class="btn btn-outline-escuro">Adquirir Obra</a>`
             : `<span class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.3);cursor:default">Esgotada</span>`
           }
         </div>
@@ -227,7 +227,7 @@ function initHeroObras() {
       <div class="obra-img-wrap">
         <img src="${o.img}" alt="${o.nome}" loading="lazy">
         <div class="obra-overlay">
-          <a href="adquirir.html?id=${o.id}" class="btn btn-outline-gold">Adquirir</a>
+          <a href="adquirir.html?id=${o.id}" class="btn btn-outline-escuro">Adquirir</a>
         </div>
       </div>
       <div class="obra-info">
