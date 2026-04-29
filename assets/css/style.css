@@ -38,12 +38,13 @@ ul { list-style: none; }
 
 h1,h2,h3{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
 }
  h1{
-    font-size: 40px;
+    font-size: 60px;
  }
  h2{
-    font-size: 30px
+    font-size: 40px
  }
  h3{
     font-size:20px;
