@@ -35,14 +35,32 @@ if(formAdquirir) {
         if (!nome || !email || !telefone) {
             alert("Carlos ventura precisa do seu nome, e-mail e telefone para retornar o contato!");
         } else {
-            formAdquirir.style.display = 'none';
+            const dadosParaSalvar = { nome, email, telefone };
 
-            const divSucesso = document.getElementById('form-success');
-            if (divSucesso) {
-                divSucesso.style.display = 'block';
-            }
-            
-            formAdquirir.reset();
+            fetch('http://localhost:3000/contato', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify(dadosParaSalvar) 
+            })
+            .then(resposta => {
+                if (resposta.ok) {
+                    formAdquirir.style.display = 'none';
+
+                    const divSucesso = document.getElementById('form-success');
+                    if (divSucesso) {
+                        divSucesso.style.display = 'block';
+                    }
+                    formAdquirir.reset();
+                } else {
+                    alert("Erro ao salvar no servidor. Tente novamente.");
+                }
+            })
+            .catch(erro => {
+                console.error("Erro na conexão com o servidor:", erro);
+                alert("O servidor está desligado! Ligue o Node.js no terminal.");
+            });
         }
     });
 
