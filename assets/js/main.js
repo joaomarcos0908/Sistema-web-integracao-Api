@@ -247,8 +247,10 @@ function initFormAdquirir() {
   const params = new URLSearchParams(window.location.search);
   const idObra = parseInt(params.get('id'));
   const obra   = obras.find(o => o.id === idObra);
+  let nomeDaObraSelecionada = "Contato Geral"; 
  
   if (obra) {
+    nomeDaObraSelecionada = obra.nome;
     const el = document.getElementById('form-obra-info');
     if (el) {
       el.innerHTML = `
@@ -257,26 +259,33 @@ function initFormAdquirir() {
         <div class="form-obra-nome">${obra.nome}</div>
         <div class="form-obra-detalhes">${obra.ano} · ${obra.colecao}</div>
         <div class="form-obra-preco">R$ ${obra.preco.toLocaleString('pt-BR')}</div>
-        <div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem" data-preco-brl="${obra.preco}"></div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem"></div>
       `;
     }
-    const hiddenObra = document.getElementById('hidden-obra');
-    if (hiddenObra) hiddenObra.value = obra.nome;
   }
  
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
  
     const nome     = document.getElementById('campo-nome').value.trim();
     const email    = document.getElementById('campo-email').value.trim();
     const telefone = document.getElementById('campo-telefone').value.trim();
+    
+    const mensagemInput = document.getElementById('campo-msg');
+    const mensagem = mensagemInput ? mensagemInput.value.trim() : '';
  
     if (!nome || !email || !telefone) {
       alert("Carlos Ventura precisa do seu nome, e-mail e telefone para retornar o contato!");
       return;
     }
  
-    const dadosParaSalvar = { nome, email, telefone };
+    const dadosParaSalvar = { 
+      nome, 
+      email, 
+      telefone, 
+      mensagem, 
+      obra: nomeDaObraSelecionada 
+    };
  
     fetch('http://localhost:3000/contato', {
       method: 'POST',
@@ -300,84 +309,25 @@ function initFormAdquirir() {
   });
 }
  
-
-document.addEventListener('DOMContentLoaded' , async  () => {
-
-const cotacoes =  await buscarCotacoes();
-taxaDolar = cotacoes.dolar;
-taxaEuro = cotacoes.euro;
-
-const currencyBar = document.getElementById('currency-bar');
-
-if(currencyBar && cotacoes){
-        currencyBar.innerHTML = `<span><strong>USD:</strong> R$ ${cotacoes.dolar}</span> | <span><strong>EUR:</strong> R$ ${cotacoes.euro}</span>`;
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const cotacoes = await buscarCotacoes();
+    taxaDolar = cotacoes.dolar;
+    taxaEuro = cotacoes.euro;
+  
+    const currencyBar = document.getElementById('currency-bar');
+    if(currencyBar && cotacoes){
+      currencyBar.innerHTML = `<span><strong>USD:</strong> R$ ${cotacoes.dolar}</span> | <span><strong>EUR:</strong> R$ ${cotacoes.euro}</span>`;
     }
-
-const precosBRL = document.querySelectorAll('.preco-brl');
-
-if(precosBRL.length > 0 && cotacoes) {
-    precosBRL.forEach(element => {
-    const valorReal = parseFloat(element.innerText.replace('R$', '').replace(/\./g, '').replace(',', '.'));
-    const valorUSD = (valorReal/cotacoes.dolar).toFixed(2)
-
-    const infoConversao = document.createElement('p');
-    infoConversao.className = 'preco-convertido';
-    infoConversao.innerHTML = `<strong>USD:</strong> $ ${valorUSD}`;
-
-    element.parentElement.appendChild(infoConversao);
-    });
-}
-
-const formAdquirir = document.getElementById('form-adquirir');
-if(formAdquirir) {
-    formAdquirir.addEventListener('submit', (evento)  => {
-        evento.preventDefault(); 
-
-        const nome = document.getElementById('campo-nome').value.trim();
-        const email = document.getElementById('campo-email').value.trim();
-        const telefone = document.getElementById('campo-telefone').value.trim();
-
-        if (!nome || !email || !telefone) {
-            alert("Carlos ventura precisa do seu nome, e-mail e telefone para retornar o contato!");
-        } else {
-            const dadosParaSalvar = { nome, email, telefone };
-
-            fetch('http://localhost:3000/contato', {
-                method: 'POST', 
-                headers: {
-                    'Content-Type': 'application/json' 
-                },
-                body: JSON.stringify(dadosParaSalvar) 
-            })
-            .then(resposta => {
-                if (resposta.ok) {
-                    formAdquirir.style.display = 'none';
-
-                    const divSucesso = document.getElementById('form-success');
-                    if (divSucesso) {
-                        divSucesso.style.display = 'block';
-                    }
-                    formAdquirir.reset();
-                } else {
-                    alert("Erro ao salvar no servidor. Tente novamente.");
-                }
-            })
-            .catch(erro => {
-                console.error("Erro na conexão com o servidor:", erro);
-                alert("O servidor está desligado! Ligue o Node.js no terminal.");
-            });
-        }
-    });
-   
-}
-initNavbar();
-initMobileMenu();
-initHeroObras(); 
-
-renderObras(obras);
-
-scrollInterativo()
-initFiltros();
-initFormAdquirir();
-})
-
+  } catch(e) {
+    console.error("Erro ao buscar cotações na inicialização", e);
+  }
+ 
+  initNavbar();
+  initMobileMenu();
+  initHeroObras(); 
+  renderObras(obras);
+  scrollInterativo();
+  initFiltros();
+  initFormAdquirir();
+});
