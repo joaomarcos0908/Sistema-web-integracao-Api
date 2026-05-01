@@ -1,5 +1,5 @@
 
-   const obras = [
+  let obras = [
   {
     id: 1,
     nome: "Sertão Ardente",
@@ -74,6 +74,9 @@
   }
 ]; 
 
+const obrasDoAdmin = JSON.parse(localStorage.getItem('obras')) || [];
+
+obras = [...obras, ...obrasDoAdmin];
 
 let taxaDolar = null;
 let taxaEuro  = null;
