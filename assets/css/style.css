@@ -628,41 +628,48 @@ footer {
 
  /* Alteraçoes css Adriano */
 
-.bio-grade {
+/* =============================================
+   sobre.html — estilos extraídos
+   ============================================= */
+
+/* Bio + Foto — grid de duas colunas */
+.sobre-bio-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
 }
 
-.bio-grade p {
+.sobre-bio-grid p {
   margin-bottom: 1.2rem;
 }
 
+/* Foto do artista */
 .sobre-foto {
   aspect-ratio: 4/5;
   object-fit: cover;
   width: 100%;
 }
 
-.container-linha-tempo {
+/* Container da timeline com largura máxima */
+.sobre-timeline-container {
   max-width: 800px;
 }
 
-.chamada-acao {
+/* CTA section — centralizada */
+.sobre-cta {
   text-align: center;
   padding: 6rem 2rem;
 }
 
-.chamada-acao .rotulo-secao {
+.sobre-cta .section-label {
   justify-content: center;
   display: flex;
 }
 
-.chamada-acao .divisor-secao {
+.sobre-cta .section-divider {
   margin: 1.5rem auto 2.5rem;
 }
-
 /* ============================================= 
 
    admin.html — estilos 
