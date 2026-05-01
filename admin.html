@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — Carlos Ventura</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container container-admin">
+    <h2>Cadastrar Nova Obra</h2>
+    <div class="section-divider"></div>
+
+    <div class="campo-admin">
+      <label>Título da Obra</label>
+      <input type="text" id="titulo" placeholder="Ex: Sertão ao Entardecer">
+    </div>
+    <div class="campo-admin">
+      <label>Técnica</label>
+      <select id="tecnica">
+        <option value="Óleo">Óleo</option>
+        <option value="Acrílico">Acrílico</option>
+        <option value="Aquarela">Aquarela</option>
+      </select>
+    </div>
+    <div class="campo-admin">
+      <label>Coleção</label>
+      <select id="colecao">
+        <option value="Sertão e Silêncio">Sertão e Silêncio</option>
+        <option value="Paisagens Urbanas">Paisagens Urbanas</option>
+      </select>
+    </div>
+    <div class="campo-admin">
+      <label>Preço (R$)</label>
+      <input type="number" id="preco" placeholder="Ex: 3500">
+    </div>
+    <div class="campo-admin">
+      <label>URL da Imagem</label>
+      <input type="text" id="imagem" placeholder="https://...">
+    </div>
+    <div class="campo-admin">
+      <label>Disponível?</label>
+      <select id="disponivel">
+        <option value="true">Sim</option>
+        <option value="false">Não (Vendida)</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" id="btn-salvar">Salvar Obra</button>
+
+    <div class="lista-obras-admin">
+      <h3>Obras cadastradas</h3>
+      <div id="lista-admin"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
+
+<!-- http://127.0.0.1:5500/admin.html  Site que deve ser acessado pelo admin -->

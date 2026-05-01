@@ -380,3 +380,4 @@ scrollInterativo()
 initFiltros();
 initFormAdquirir();
 })
+
