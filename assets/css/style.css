@@ -625,3 +625,40 @@ footer {
   }
  
 }
+
+ /* Alteraçoes css Adriano */
+
+.bio-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.bio-grade p {
+  margin-bottom: 1.2rem;
+}
+
+.sobre-foto {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  width: 100%;
+}
+
+.container-linha-tempo {
+  max-width: 800px;
+}
+
+.chamada-acao {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.chamada-acao .rotulo-secao {
+  justify-content: center;
+  display: flex;
+}
+
+.chamada-acao .divisor-secao {
+  margin: 1.5rem auto 2.5rem;
+}
