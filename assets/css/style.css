@@ -662,3 +662,39 @@ footer {
 .chamada-acao .divisor-secao {
   margin: 1.5rem auto 2.5rem;
 }
+
+/* ============================================= 
+
+   admin.html — estilos 
+
+   ============================================= */ 
+
+.container-admin { 
+
+  max-width: 600px; 
+
+  padding: 4rem 2rem; 
+
+} 
+
+
+.campo-admin { 
+
+  display: flex; 
+
+  flex-direction: column; 
+
+  gap: 0.5rem; 
+
+  margin-bottom: 1.5rem; 
+
+} 
+
+
+.campo-admin label { 
+
+  font-weight: 600; 
+
+  font-size: 0.9rem; 
+
+} 
