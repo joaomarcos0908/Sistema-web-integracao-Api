@@ -63,10 +63,10 @@ h1,h2,h3{
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.2rem 4rem;
-  background: rgba(245,240,232,0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(184,150,62,0.2);
+  border-bottom: 1px solid color(srgb red green blue);
   transition: var(--trans);
+  background: burlywood;
 }
 .navbar.scrolled {
   padding: 0.8rem 4rem;
@@ -76,9 +76,9 @@ h1,h2,h3{
   font-family: var(--serif);
   font-size: 1.5rem;
   letter-spacing: 0.05em;
-  color: var(--escuro);
+  color: var(--white);
 }
-.nav-logo span { color: var(--escuro); font-style: italic; }
+.nav-logo span { color: var(--white); font-style: italic; }
 .nav-links {
   display: flex; gap: 2.5rem; align-items: center;
 }
@@ -88,7 +88,7 @@ h1,h2,h3{
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-lt);
+  color: var(--white);
   transition: color var(--trans);
   position: relative;
 }
@@ -212,14 +212,14 @@ section { padding: 6rem 4rem; }
    font-size: 1rem;
  }
  .btn-primary{
-   color: #dadada;
-   background-color: var(--escuro);
+   color: var(--escuro);
+   background-color: transparent;
    border-color: var(--escuro);
  }
  .btn-primary:hover {
-  background-color: rgb(88, 11, 11);
-  border-color: rgb(88, 11, 11);
-  color: #fff;
+  background-color:  var(--escuro);
+  border-color: var(--escuro);
+  color: burlywood;
  }
  .btn-outline{
    color: var(--escuro);
@@ -227,20 +227,20 @@ section { padding: 6rem 4rem; }
    border-color: var(--escuro);
  }
  .btn-outline:hover{
-   color: #fff;
-   background-color: rgb(88, 11, 11);
-   border-color: rgb(88, 11, 11);
+   color: burlywood;
+   background-color:   var(--escuro);
+   border-color:  var(--escuro);
  }
 
  .btn-outline-escuro{
-   color:rgb(184, 207, 13);
+   color: var(--white);
    background-color: transparent;
-   border-color: rgb(184, 207, 13);
+   border-color: var(--escuro);
  }
    .btn-outline-escuro:hover{
-      color: #fff;
-      background-color: rgb(184, 207, 13);
-      border-color: rgb(184, 207, 13);
+      color: var(--white);
+      background-color: var(--escuro);
+      border-color:   var(--white);
    }
 
 
@@ -462,6 +462,7 @@ section { padding: 6rem 4rem; }
 }
 .etiqueta-galeria{
   background: var(--escuro);
+   border-radius: 10px;
 }
 .currency-bar {
   display: flex; align-items: center; gap: 1.5rem;
@@ -477,13 +478,13 @@ section { padding: 6rem 4rem; }
 .currency-bar .sep { color: rgba(255,255,255,0.2); }
 
 footer {
-  background: var(--cinza-dark);
+  background: var(--escuro);
   color: var(--white);
   padding: 5rem 4rem 2rem;
 }
 
 .footer-brand .nav-logo { font-size: 1.8rem; margin-bottom: 1rem; }
-.footer-brand p { font-size: 0.85rem; color: var(); max-width: 280px; }
+.footer-brand p { font-size: 0.85rem; color: white; max-width: 280px; }
 .footer-col h5 {
   font-family: var(--sans);
   font-size: 0.65rem;
@@ -501,7 +502,7 @@ footer {
 }
 .footer-col a:hover { color: var(--bege); }
 .footer-bottom {
-  border-top: 1px solid var(--escuro);
+  border-top: 1px solid var(--white);
   padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
