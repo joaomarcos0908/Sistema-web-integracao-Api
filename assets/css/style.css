@@ -64,9 +64,9 @@ h1,h2,h3{
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.2rem 4rem;
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid color(srgb red green blue);
+  border-bottom: 1px solid rgba(7,5,29,0.15); 
   transition: var(--trans);
-  background: burlywood;
+  background: burlywood; 
 }
 .navbar.scrolled {
   padding: 0.8rem 4rem;
@@ -80,7 +80,42 @@ h1,h2,h3{
 }
 .nav-logo span { color: var(--white); font-style: italic; }
 .nav-links {
-  display: flex; gap: 2.5rem; align-items: center;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--cinza);
+  padding: 6rem 2rem 2rem;
+  z-index: 99;
+}
+.nav-links.open { display: flex; }
+.nav-links li { border-bottom: 1px solid rgba(26,22,18,0.08); }
+.nav-links a {
+  display: block;
+  font-size: 1rem;
+  padding: 1rem 0;
+  color: var(--ink-lt);
+}
+
+@media (min-width: 768px) {
+  .nav-toggle { display: none; }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    padding: 0;
+    gap: 2rem;
+    z-index: auto;
+  }
+  .nav-links li { border: none; }
+  .nav-links a { font-size: 0.75rem; padding: 0; }
+}
+
+@media (min-width: 1024px) {
+  .navbar { padding: 1.2rem 4rem; }
+  .nav-links { gap: 2.5rem; }
 }
 .nav-links a {
   font-family: var(--sans);
