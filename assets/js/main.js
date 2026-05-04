@@ -277,10 +277,31 @@ function initFormAdquirir() {
     const mensagemInput = document.getElementById('campo-msg');
     const mensagem = mensagemInput ? mensagemInput.value.trim() : '';
  
-    if (!nome || !email || !telefone) {
-      alert("Carlos Ventura precisa do seu nome, e-mail e telefone para retornar o contato!");
-      return;
-    }
+   document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+
+let valido = true;
+
+const grupoNome = document.getElementById('campo-nome').closest('.form-group');
+const grupoEmail = document.getElementById('campo-email').closest('.form-group');
+const grupoTelefone = document.getElementById('campo-telefone').closest('.form-group');
+
+if (!nome) {
+  grupoNome.classList.add('has-error');
+  valido = false;
+}
+
+const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+if (!email || !emailValido) {
+  grupoEmail.classList.add('has-error');
+  valido = false;
+}
+
+if (!telefone) {
+  grupoTelefone.classList.add('has-error');
+  valido = false;
+}
+
+if (!valido) return;
  
     const dadosParaSalvar = { 
       nome, 
