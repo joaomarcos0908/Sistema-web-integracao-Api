@@ -191,10 +191,7 @@ h1,h2,h3{
   background: linear-gradient(to right, var(--cinza) 0%, transparent 30%);
 }
 .hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 5rem;
-  font-size: 0.65rem; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--muted);
-  display: flex; align-items: center; gap: 0.8rem;
+  display: none;
 }
 .hero-scroll::before {
   content: '';
@@ -333,7 +330,7 @@ section { padding: 6rem 4rem; }
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--escuro);
   margin-bottom: 0.6rem;
 }
 .form-group input, .form-group textarea, .form-group select {
@@ -347,6 +344,11 @@ section { padding: 6rem 4rem; }
   color: var(--ink);
   outline: none;
   transition: border-color var(--trans);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--ink-lt);
+  opacity: 1;
 }
 .form-group input:focus, .form-group textarea:focus {
   border-color: var(--escuro);
@@ -414,7 +416,7 @@ section { padding: 6rem 4rem; }
 }
 .obra-preco-conv {
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--escuro);
   margin-top: 0.2rem;
 }
 .badge-vendido {
@@ -631,6 +633,11 @@ footer {
   .hero-content { order: 1; padding: 8rem 3rem 5rem; }
   .hero-image { order: 2; height: auto; max-height: none; }
   .hero-image-overlay { background: linear-gradient(to right, burlywood 0%, transparent 30%); }
+  .hero-scroll{display: flex;
+             position: absolute; bottom: 2.5rem; left: 5rem;
+             font-size: 0.65rem; letter-spacing: 0.3em;
+             text-transform: uppercase; color: var(--mute);
+              align-items: center; gap: 0.8rem;}
   .obras-grid { grid-template-columns: repeat(2, 1fr); }
   .colecoes-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
