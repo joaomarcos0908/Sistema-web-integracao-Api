@@ -14,8 +14,6 @@ app.post('/contato', (req, res) => {
 
         if (fs.existsSync(arquivo)) {
             const conteudoArquivo = fs.readFileSync(arquivo, 'utf-8');
-            
-           
             if (conteudoArquivo.trim() !== "") {
                 lista = JSON.parse(conteudoArquivo);
             }
@@ -28,12 +26,12 @@ app.post('/contato', (req, res) => {
         res.status(201).send({ mensagem: "Dados salvos com sucesso!" });
 
     } catch (erro) {
-
         console.error("ERRO NO SERVIDOR:", erro.message);
         res.status(500).send({ erro: "Falha interna no servidor." });
     }
 });
 
-app.listen(3000, () => {
-    console.log("Servidor do Carlos Ventura rodando: http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
