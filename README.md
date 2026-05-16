@@ -1,56 +1,83 @@
-#  Galeria de Arte Digital — Carlos Ventura
+Galeria de Arte Digital — Carlos Ventura
+Projeto desenvolvido para a avaliação P2 da disciplina de Programação Web do iCEV. Simula uma galeria online para um artista plástico nordestino, com frontend hospedado no GitHub Pages e backend em Node.js hospedado no Railway.
+Links de Acesso
 
-Este projeto é uma aplicação web funcional desenvolvida para a avaliação P2 da disciplina de Desenvolvimento Web do iCEV. O sistema simula um cenário corporativo real para um artista plástico nordestino, integrando design responsivo, consumo de APIs externas e um backend para persistência de dados.
+Site: https://joaomarcos0908.github.io/Sistema-web-integracao-Api/
+API: https://sistema-web-integracao-api-production.up.railway.app
 
-## Link de Acesso
-O projeto está hospedado e pode ser visualizado em:
-[https://eduardoreex.github.io/Sistema-web-integracao-Api/](https://eduardoreex.github.io/Sistema-web-integracao-Api/)
+Requisitos Técnicos Implementados
 
+1. Interface e Responsividade
 
-##  Requisitos Técnicos Implementados
+HTML semântico com <header>, <main>, <section> e <footer>
+Layout responsivo com Flexbox e CSS Grid para mobile e desktop
 
-### 1. Interface e Responsividade (0,5 pt + 0,5 pt)
-- **HTML Semântico:** Uso de tags como `<header>`, `<main>`, `<section>` e `<footer>` para melhor acessibilidade e SEO.
-- **CSS Avançado:** Layout construído com Flexbox e CSS Grid para garantir que o site seja totalmente responsivo em dispositivos móveis e desktops.
+2. Interatividade e DOM
 
-### 2. Interatividade e DOM (1,0 pt)
-- **Manipulação Dinâmica:** A galeria de obras é gerada dinamicamente via JavaScript[cite: 1].
-- **Filtros Inteligentes:** Sistema de filtragem por técnica, coleção e preço sem recarregar a página[cite: 1].
-- **Validação:** O formulário de interesse possui validação de campos obrigatórios antes do envio[cite: 1].
+Galeria de obras gerada dinamicamente via JavaScript
+Filtros por técnica, coleção e faixa de preço sem recarregar a página
+Validação de campos obrigatórios no formulário de interesse
 
-### 3. Consumo de API Externa (1,0 pt)
-- **AwesomeAPI:** Uso da Fetch API para buscar cotações em tempo real de USD e EUR, renderizando a conversão de preços das obras automaticamente na interface[cite: 1].
+3. Consumo de API Externa
 
-### 4. Backend e Persistência (Bônus +1,0 pt)
-- **Node.js:** Desenvolvimento de um servidor próprio para gerenciar as requisições do formulário[cite: 1].
-- **Armazenamento:** Os dados de interessados são salvos de forma persistente em um arquivo `interessados.json` no servidor[cite: 1].
+Integração com a AwesomeAPI para cotações em tempo real de USD e EUR
+Conversão automática dos preços das obras exibida na interface
 
----
+4. Backend e Persistência (Bônus)
 
-## Como Executar o Projeto Localmente
+Servidor Node.js com Express hospedado no Railway
+Rota POST /contato — recebe e salva dados do formulário em interessados.json
+Rota GET /contatos — retorna todos os contatos salvos em JSON
 
-Para testar a funcionalidade completa (incluindo o salvamento de dados no backend), siga os passos:
+Como Executar Localmente
+Pré-requisitos
 
-1. **Clonar o repositório:**
+Node.js instalado
+Git instalado
 
-   ```bash
-   git clone [https://github.com/eduardoreex/Sistema-web-integracao-Api.git](https://github.com/eduardoreex/Sistema-web-integracao-Api.git)
-   
-Iniciar o Servidor Backend:
-Navegue até a pasta do projeto e, no terminal, execute:
+Passo a passo
 
-Bash
-node server.js
-O servidor rodará em http://localhost:3000 para processar os envios do formulário.
+Clone o repositório:
 
-Abrir o Frontend:
-Utilize a extensão Live Server do VS Code para abrir o arquivo index.html.
+bashgit clone https://github.com/joaomarcos0908/Sistema-web-integracao-Api.git
+cd Sistema-web-integracao-Api
 
-Organização do Painel Administrativo
-O sistema conta com uma área de administração (admin.html) que permite o cadastro temporário de novas obras utilizando LocalStorage, demonstrando versatilidade na manipulação de dados tanto no lado do cliente quanto no servidor.
+Instale as dependências:
 
-Estudantes: 
+bashnpm install
+
+Inicie o servidor backend:
+
+bashnode server.js
+O servidor rodará em http://localhost:3000
+
+Abra o frontend com a extensão Live Server do VS Code (index.html)
+
+O formulário detecta automaticamente se está rodando em localhost ou em produção e direciona para a API correta.
+
+Estrutura do Projeto
+├── index.html # Página inicial
+├── galeria.html # Galeria de obras com filtros
+├── adquirir.html # Formulário de interesse
+├── sobre.html # Página sobre o artista
+├── admin.html # Painel administrativo (LocalStorage)
+├── server.js # Servidor Node.js (Express)
+├── package.json
+├── assets/
+│ ├── css/style.css
+│ └── js/
+│ ├── main.js # Lógica principal do frontend
+│ ├── api.js # Integração com AwesomeAPI (cotações)
+│ └── admin.js # Painel administrativo
+└── interessados.json # Dados salvos pelo backend
+
+Infraestrutura
+ServiçoPlataformaURLFrontendGitHub Pagesjoaomarcos0908.github.io/...BackendRailwaysistema-web-integracao-api-production.up.railway.app
+
+Equipe
+
 Eduardo Oliveira dos Santos
 João Marcos Nogueira
 Adriano Carvalho
-Instituição: iCEV - Instituto de Ensino Superior.
+
+Instituição: iCEV — Instituto de Ensino Superior
