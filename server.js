@@ -41,3 +41,12 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+app.get('/contatos', (req, res) => {
+    const arquivo = './interessados.json';
+    if (fs.existsSync(arquivo)) {
+        const lista = JSON.parse(fs.readFileSync(arquivo, 'utf-8'));
+        res.json(lista);
+    } else {
+        res.json([]);
+    }
+});
