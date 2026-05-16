@@ -3,7 +3,7 @@ Projeto desenvolvido para a avaliação P2 da disciplina de Programação Web do
 Links de Acesso
 
 Site: https://joaomarcos0908.github.io/Sistema-web-integracao-Api/
-API: https://sistema-web-integracao-api-production.up.railway.app
+API: https://sistema-web-integracao-api-production.up.railway.app/contatos
 
 Requisitos Técnicos Implementados
 
