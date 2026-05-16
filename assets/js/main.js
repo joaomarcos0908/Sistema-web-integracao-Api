@@ -331,7 +331,7 @@ if (!valido) return;
     })
     .catch(erro => {
       console.error("Erro na conexão com o servidor:", erro);
-      alert("O servidor está desligado! Ligue o Node.js no terminal.");
+      alert("Erro: " + erro.message);
     });
   });
 }
