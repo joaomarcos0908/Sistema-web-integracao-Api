@@ -311,8 +311,8 @@ if (!valido) return;
       obra: nomeDaObraSelecionada 
     };
  const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:3000'
-    : 'https://SEU-DOMINIO.up.railway.app';
+  ? 'http://localhost:3000'
+  : 'https://sistema-web-integracao-api-production.up.railway.app';
 
     fetch(`${API_URL}/contato`, {
       method: 'POST',
