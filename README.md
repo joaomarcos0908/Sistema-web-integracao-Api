@@ -9,7 +9,7 @@ Requisitos Técnicos Implementados
 
 1. Interface e Responsividade
 
-HTML semântico com <header>, <main>, <section> e <footer>
+HTML semântico com header, main, section e footer
 Layout responsivo com Flexbox e CSS Grid para mobile e desktop
 
 2. Interatividade e DOM
@@ -29,7 +29,7 @@ Servidor Node.js com Express hospedado no Railway
 Rota POST /contato — recebe e salva dados do formulário em interessados.json
 Rota GET /contatos — retorna todos os contatos salvos em JSON
 
-Como Executar Localmente
+ E se eu quiser Executar Localmente?
 Pré-requisitos
 
 Node.js instalado
@@ -39,7 +39,7 @@ Passo a passo
 
 Clone o repositório:
 
-bashgit clone https://github.com/joaomarcos0908/Sistema-web-integracao-Api.git
+bash git clone https://github.com/joaomarcos0908/Sistema-web-integracao-Api.git
 cd Sistema-web-integracao-Api
 
 Instale as dependências:
