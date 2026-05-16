@@ -310,8 +310,11 @@ if (!valido) return;
       mensagem, 
       obra: nomeDaObraSelecionada 
     };
- 
-    fetch('http://localhost:3000/contato', {
+ const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : 'https://SEU-DOMINIO.up.railway.app';
+
+    fetch(`${API_URL}/contato`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dadosParaSalvar)
